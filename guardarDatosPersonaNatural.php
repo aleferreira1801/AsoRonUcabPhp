@@ -12,18 +12,13 @@ en donde se editan
 ?>
 
 <?php
-
+include_once "connection.php";
 #Salir si alguno de los datos no está presente
-if (!isset($_POST["rif_persona_natural"]) || !isset($_POST["ci_natural"]) || !isset($_POST["p_nombre_natural"]) 
-|| ($_POST["s_nombre_natural"]) || !isset($_POST[" p_apellido_natural"]) || !isset($_POST[" s_apellido_natural"]) || !isset($_POST[" direc_hab_natural"]) || !isset($_POST[" genero"]) || !isset($_POST[" puntos_natural"]) 
-|| ($_POST[" direccion_envio"]) || !isset($_POST[" nacionalidad_natural"]) || !isset($_POST[" fecha_nacimiento_natural"]) || !isset($_POST[" fk_id_persona_juridica"]) || !isset($_POST[" fk_id_proveedor"]) || 
-!isset($_POST[" fk_id_lugar"])||!isset($_POST[" fk_id_lugar2"])  || isset($_POST[" id_persona_natural"]) ){
-    exit();
-}
+
 
 #Si todo va bien, se ejecuta esta parte del código...
 
-include_once "connection.php";
+
 $rif_persona_natural = $_POST["rif_persona_natural"];
 $ci_natural = $_POST["ci_natural"];
 $p_nombre_natural= $_POST["p_nombre_natural"];

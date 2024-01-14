@@ -12,30 +12,30 @@
 <form>
 <div class="container">
     <h1 class=" text-center">Evento</h1>
-    <form action="InsertarPersonaNatural.php" method="post">
+    <form action="InsertarPersonaNatural.php" method="POST">
     <div class="form-group">
         <label >Nombre</label>
-        <input type="text" class="form-control" id="rif_persona_natural" name="rif_persona_natural" placeholder="Ingrese RIF">
+        <input type="text" class="form-control" id="nombre_evento" name="nombre_evento" placeholder="Ingrese el nombre del evento">
     </div>
     
     <div class="form-group">
     <label for="exampleFormControlTextarea1">Descripcion</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="descripcion_evento" name= "descripcion_evento" rows="3"></textarea>
   </div>
 
     <div class="form-group">
         <label > Numero Edicion Evento</label>
-        <input type="text" class="form-control" id="p_nombre_natural" name="p_nombre_natural" placeholder="Ingrese Su Primer Nombre">
+        <input type="text" class="form-control" id="numero_edicion_evento" name="numero_edicion_evento" placeholder="Ingrese el numero de edicion del evento">
     </div>
 
     <div class="form-group">
         <label >Fecha Inicio</label>
-        <input type="date" type="time" type class="form-control" id="s_nombre_natural" name="s_nombre_natural" placeholder="Ingrese Su Segundo Nombre">
+        <input type="date" type="time" type class="form-control" id="fecha_inicio_evento" name="fecha_inicio_evento" placeholder="Ingrese la fecha inicio del evento">
     </div>
 
     <div class="form-group">
         <label >Fecha Fin </label>
-        <input type="date time" class="form-control" id="p_apellido_natural" name="p_apellido_natural" placeholder="Ingrese Su Primer Apellido">
+        <input type="date "  class="form-control" id="fecha_fin_evento" name="fecha_fin_evento" placeholder="Ingrese la fecha fin del evento">
     </div>
 
     <div class="form-group">
@@ -45,27 +45,23 @@
 
     <div class="form-group">
         <label >Limite Ocupacion</label>
-        <input type="text" class="form-control" id="direc_hab_natura" name="direc_hab_natural" placeholder="Ingrese su direccion de habitacion">
+        <input type="integer" class="form-control" id="locacion_evento" name="locacion_evento" placeholder="Ingrese la locacion del evento">
     </div>
 
     <div class="form-group">
     <label >Punto De Venta</label>
-    <select class="form-control" id="genero">
-       <option>Seleccione Un Genero</option>
-      <option id="genero">Femenino</option>
-      <option id="genero">Masculino</option>
-      <option id="genero">Otro</option>
-    </select>
+        <input type="integer" class="form-control" id="fk_id_punto_de_venta" name="fk_id_punto_de_venta" placeholder="Ingrese el punto de venta">
+
   </div>
 
   
   <div class="form-group">
         <label ">Lugar </label>
-        <input type="text" class="form-control" id="puntos_natural" name="puntos_natural" placeholder="Ingrese los puntos">
+        <input type="integer" class="form-control" id="fk_id_lugar" name="fk_id_lugar" placeholder="Ingrese el lugar">
     </div>
 
     <button type="submit" class="btn btn-danger">Guardar</button>
-			<a href="./ListarPersonaJuridca.php" class="btn btn-info">Lista</a>
+			<a href="./ListarEvento.php" class="btn btn-info">Lista</a>
  
   </div>
    
