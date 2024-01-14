@@ -12,17 +12,7 @@ enviados a través de formulario.php
 ?>
 <?php
 #Salir si alguno de los datos no está presente
-if (!isset($_POST["nombre_evento"]) 
-|| !isset( $_POST["descripcion_evento"]) 
-|| !isset( $_POST["numero_edicion_evento"] )
-|| !isset( $_POST["fecha_inicio_evento"] ) 
-|| !isset( $_POST["fecha_fin_evento"] ) 
-|| !isset( $_POST["locacion_evento"] )   
-|| !isset( $_POST["limite_ocupacion_evento"] )      
-|| !isset( $_POST["fk_id_punto_de_venta"]    )  
-|| !isset( $_POST["fk_id_lugar"]    )  )   {
-    exit();
-}
+
 
 #Si todo va bien, se ejecuta esta parte del código...
 

@@ -44,7 +44,7 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 							<td><?php echo $mascota->id_departamento ?></td>
 							<td><?php echo $mascota->nombre_departamento ?></td>
 							<td><?php echo $mascota->numero_departamento ?></td>
-              <td><?php echo $mascota->descripcion_departamento ?></td>
+                             <td><?php echo $mascota->descripcion_departamento ?></td>
 							<td><a class="btn btn-warning" href="<?php echo "editar.php?id_departamento=" . $mascota->id_departamento?>">Editar 📝</a></td>
 							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_departamento=" . $mascota->id_departamento?>">Eliminar 🗑️</a></td>
 						</tr>
@@ -53,7 +53,7 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 			</table>
 		</div>
 	</div>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </div>
 <?php  ?>
           

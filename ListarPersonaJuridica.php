@@ -13,8 +13,8 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM  persona_natural");
-$personanatural = $sentencia->fetchAll(PDO::FETCH_OBJ);
+$sentencia = $base_de_datos->query("SELECT * FROM  persona_juridica");
+$personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +30,8 @@ $personanatural = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Listar con arreglo</h1>
-		<a href="//parzibyte.me/blog" target="_blank">By Parzibyte</a>
+		<h1>Tabbla Persona Juridica</h1>
+	
 		<br>
 		<div class="table-responsive">
         <table class="table table-hover table-resposive">
@@ -44,10 +44,13 @@ $personanatural = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <th>Pagina Web </th>
                             <th>Capital Disponible</th>
                             <th>Direccion Fiscal</th>
-                            <th>Direccion De Habitacion</th>
-                            <th>Direccion Fisica</th>
+                            <th>Direccion De Fisica</th>
                             <th>Lugar</th>
                             <th>Lugar 2</th>
+                            <th>opciones</th>
+                            <th></th>
+                           
+                           
                             
                             
                         </tr>
@@ -59,25 +62,20 @@ $personanatural = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					Atención aquí, sólo esto cambiará
 					Pd: no ignores las llaves de inicio y cierre {}
 					-->
-					<?php foreach($personanatural as $personanatural){ ?>
+					<?php foreach($personaJuridica as $personaJuridica){ ?>
 						<tr>
-                        <td><?php echo $personanatural->id_persona_natural ?></td>
-							<td><?php echo $personanatural->rif_persona_natural ?></td>
-							<td><?php echo $personanatural->ci_natural ?></td>
-							<td><?php echo $personanatural->p_nombre_natural ?></td>
-                            <td><?php echo $personanatural->s_nombre_natural?></td>
-                            <td><?php echo $personanatural->p_apellido_natural?></td>
-                            <td><?php echo $personanatural->s_apellido_natural?></td>
-                            <td><?php echo $personanatural->direc_hab_natural?></td>
-                            <td><?php echo $personanatural->genero?></td>
-                            <td><?php echo $personanatural->puntos_natural?></td>
-                            <td><?php echo $personanatural->direccion_envio?></td>
-                            <td><?php echo $personanatural->fk_id_persona_juridica?></td>
-                            <td><?php echo $personanatural->fk_id_proveedor?></td>
-                            <td><?php echo $personanatural->fk_id_lugar?></td>
-                            <td><?php echo $personanatural->fk_id_lugar2?></td>
-							<td><a class="btn btn-warning" href="<?php echo "editar.php?id_persona_natural" . $personanatural->id_persona_natural?>">Editar 📝</a></td>
-							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_persona_natural=" . $personanatural->id_persona_natural?>">Eliminar 🗑️</a></td>
+                        <td><?php echo $personaJuridica->id_persona_juridica ?></td>
+							<td><?php echo $personaJuridica->rif_persona_juridica ?></td>
+							<td><?php echo $personaJuridica->denom_comercial_juridica ?></td>
+							<td><?php echo $personaJuridica->razon_social_juridica?></td>
+                            <td><?php echo $personaJuridica->pagina_web_juridica?></td>
+                            <td><?php echo $personaJuridica->capital_disponible_juridica?></td>
+                            <td><?php echo $personaJuridica->direc_fiscal_juridica?></td>
+                            <td><?php echo $personaJuridica->direc_fisica_principal_juridica?></td>
+                            <td><?php echo $personaJuridica->fk_id_lugar?></td>
+                            <td><?php echo $personaJuridica->fk_id_lugar_2?></td>
+							<td><a class="btn btn-info" href="<?php echo "editar.php?id_persona_juridica =" . $personaJuridica->id_persona_juridica?>">Editar 📝</a></td>
+							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_persona_juridica=" . $personaJuridica->id_persona_juridica?>">Eliminar 🗑️</a></td>
 						</tr>
 					<?php } ?>
 				</tbody>

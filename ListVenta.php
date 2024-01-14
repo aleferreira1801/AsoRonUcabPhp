@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM evento");
+$sentencia = $base_de_datos->query("SELECT * FROM Venta");
 $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -38,15 +38,13 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 				<thead class="thead-dark">
 					<tr>
 						<th>ID</th>
-						<th>Nombre</th>
-						<th>Descripcion</th>
-						<th>Numero Edicion</th>
-                        <th>Fecha Inicio </th>
-                        <th>Fecha Fin </th>
-                        <th>Locacion </th>
-                        <th>Limite </th>
-                        <th>Punto</th>
-                        <th>Lugar</th>
+						<th>Numero Factura </th>
+						<th>Fecha</th>
+						<th>Total</th>
+                        <th>Punto Ganado</th>
+                        <th>Persona Natural </th>
+                        <th>Tienda Fisica</th>
+                        <th>Punto </th>
                         <th>Opciones</th>
                         <th></th>
 						
@@ -59,17 +57,17 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($mascotas as $mascota){ ?>
 						<tr>
-							<td><?php echo $mascota->id_evento ?></td>
-							<td><?php echo $mascota->nombre_evento?></td>
-							<td><?php echo $mascota->descripcion_evento?></td>
-                            <td><?php echo $mascota->numero_edicion_evento ?></td>
-                            <td><?php echo $mascota->fecha_inicio_evento ?></td>
-                            <td><?php echo $mascota->fecha_fin_evento ?></td>
-                            <td><?php echo $mascota->locacion_evento?></td>
+							<td><?php echo $mascota->id_venta ?></td>
+							<td><?php echo $mascota->numero_factura_venta?></td>
+							<td><?php echo $mascota->fecha_venta?></td>
+                            <td><?php echo $mascota->total_venta ?></td>
+                            <td><?php echo $mascota->punto_ganado_venta ?></td>
+                            <td><?php echo $mascota->fk_id_persona_natural ?></td>
+                            <td><?php echo $mascota->fk_id_punto_de_venta_tienda_fisica?></td>
                             <td><?php echo $mascota->fk_id_punto_de_venta?></td>
-                            <td><?php echo $mascota->fk_id_lugar?></td>
-							<td><a class="btn btn-info" href="<?php echo "editar.php?id_evento=" . $mascota->id_evento?>">Editar 📝</a></td>
-							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_evento=" . $mascota->id_evento?>">Eliminar 🗑️</a></td>
+                         
+							<td><a class="btn btn-info" href="<?php echo "editar.php?id_venta=" . $mascota->id_venta?>">Editar 📝</a></td>
+							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_venta=" . $mascota->venta?>">Eliminar 🗑️</a></td>
 						</tr>
 					<?php } ?>
 				</tbody>
@@ -81,4 +79,3 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 <?php  ?>
-          

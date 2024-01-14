@@ -85,6 +85,8 @@ $personanatural = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             <td><?php echo $personanatural->fk_id_proveedor?></td>
                             <td><?php echo $personanatural->fk_id_lugar?></td>
                             <td><?php echo $personanatural->fk_id_lugar_2?></td>
+                            <td><a class="btn btn-info" href="<?php echo "editar.php?id_persona_natural=" . $personanatural->id_persona_natural?>">Editar 📝</a></td>
+							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_persona_natural=" . $personanatural->id_persona_natural?>">Eliminar 🗑️</a></td>
 					
 							
 						</tr>
