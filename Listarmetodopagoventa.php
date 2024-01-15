@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM  persona_juridica");
+$sentencia = $base_de_datos->query("SELECT * FROM  metodo_pago_venta");
 $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Tabbla Persona Juridica</h1>
+		<h1>Tabla Metodo Pago Venta</h1>
 	
 		<br>
 		<div class="table-responsive">
@@ -38,15 +38,13 @@ $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
                     <thead class="thead-dark">
                         <tr>
                              <th>#</th>
-                            <th>RIF</th>
-                            <th>Denominacion Comercial</th>
-                            <th>Razon Social</th>
-                            <th>Pagina Web </th>
-                            <th>Capital Disponible</th>
-                            <th>Direccion Fiscal</th>
-                            <th>Direccion De Fisica</th>
-                            <th>Lugar</th>
-                            <th>Lugar 2</th>
+                            <th>Monto</th>
+                            <th>Venta</th>
+                            <th>Efectivo</th>
+                            <th>Tarjeta Debito </th>
+                            <th>Afiliado</th>
+                            <th>Cheque</th>
+                            <th>Tarjeta Credito</th>
                             <th>opciones</th>
                             <th></th>
                            
@@ -64,16 +62,14 @@ $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($personaJuridica as $personaJuridica){ ?>
 						<tr>
-                        <td><?php echo $personaJuridica->id_persona_juridica ?></td>
-							<td><?php echo $personaJuridica->rif_persona_juridica ?></td>
-							<td><?php echo $personaJuridica->denom_comercial_juridica ?></td>
-							<td><?php echo $personaJuridica->razon_social_juridica?></td>
-                            <td><?php echo $personaJuridica->pagina_web_juridica?></td>
-                            <td><?php echo $personaJuridica->capital_disponible_juridica?></td>
-                            <td><?php echo $personaJuridica->direc_fiscal_juridica?></td>
-                            <td><?php echo $personaJuridica->direc_fisica_principal_juridica?></td>
-                            <td><?php echo $personaJuridica->fk_id_lugar?></td>
-                            <td><?php echo $personaJuridica->fk_id_lugar_2?></td>
+                        <td><?php echo $personaJuridica->id_metodo_pago_venta ?></td>
+							<td><?php echo $personaJuridica->monto_venta ?></td>
+							<td><?php echo $personaJuridica->fk_id__venta ?></td>
+							<td><?php echo $personaJuridica->fk_id_metodo_pago_efectivo?></td>
+                            <td><?php echo $personaJuridica->fk_id_metodo_pago_tarjeta_debito?></td>
+                            <td><?php echo $personaJuridica->fk_id_metodo_pago_punto_afiliado?></td>
+                            <td><?php echo $personaJuridica->fk_id_metodo_pago_cheque?></td>
+                            <td><?php echo $personaJuridica->fk_id_metodo_pago_tarjeta_credito?></td>
 							<td><a class="btn btn-info" href="<?php echo "editarPersonaJuridca.php?id_persona_juridica=" . $personaJuridica->id_persona_juridica?>">Editar 📝</a></td>
 							<td><a class="btn btn-danger" href="<?php echo "eliminarPersonaJuridica.php?id_persona_juridica=" . $personaJuridica->id_persona_juridica?>">Eliminar 🗑️</a></td>
 						</tr>

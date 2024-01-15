@@ -38,7 +38,7 @@ los datos
 			</div>
 			<div class="form-group">
 				<label >Segundo Nombre</label>
-				<input required name="s_nombre_natural" type="text" id="s_nombre_natural" placeholder="Ingrese Su Segundo Nombre" class="form-control">
+				<input  name="s_nombre_natural" type="text" id="s_nombre_natural" placeholder="Ingrese Su Segundo Nombre" class="form-control">
 			</div>
 			<div class="form-group">
 				<label >Primer Apellido</label>
@@ -46,7 +46,7 @@ los datos
 			</div>
 			<div class="form-group">
 				<label >Segundo Apellido</label>
-				<input required name="s_apellido_natural" type="text" id="s_apellido_natural" placeholder="Ingrese Su Segundo Apellido" class="form-control">
+				<input r name="s_apellido_natural" type="text" id="s_apellido_natural" placeholder="Ingrese Su Segundo Apellido" class="form-control">
 			</div>
 			<div class="form-group">
 				<label >direccion de habitacion </label>
@@ -68,7 +68,7 @@ los datos
 			</div>
 			<div class="form-group">
 				<label >Direccion De Envio</label>
-				<input required name="direccion_envio" type="text" id="direccion_envio" placeholder="Ingrese La Direccion De Envio" class="form-control">
+				<input  name="direccion_envio" type="text" id="direccion_envio" placeholder="Ingrese La Direccion De Envio" class="form-control">
 			</div>
 
 			<div class="form-group">
