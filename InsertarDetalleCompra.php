@@ -45,7 +45,7 @@ $resultadoDetalleCompra = $sentencia->execute(
 
 if ($resultadoDetalleCompra === true) {
    
-	header("Location: ListarCompra.php");
+	header("Location: ListarDetalleCompra.php");
 } else {
     echo "Algo salió mal. Por favor verifica que la tabla exista";
 }

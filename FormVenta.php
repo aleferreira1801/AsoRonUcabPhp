@@ -23,7 +23,7 @@ los datos
 <body>
 <div class="container">
     <h1 class=" text-center">Venta</h1>
-		<form action="InsertVenta.php" method="POST">
+		<form action="insertarVenta.php" method="POST">
 			<div class="form-group">
 				<label>Numero Factura</label>
 				<input required name="numero_factura_venta" type="integer" id="numero_factura_venta" placeholder="Ingrese el numero de la factura" class="form-control">

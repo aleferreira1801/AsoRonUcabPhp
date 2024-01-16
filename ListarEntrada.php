@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM detalle_compra");
+$sentencia = $base_de_datos->query("SELECT * FROM entrada");
 $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,22 +30,22 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Compra</h1>
+		<h1>Lista Entrada</h1>
 		<a href="//parzibyte.me/blog" target="_blank">By Parzibyte</a>
 		<br>
 		<div class="table-responsive">
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
-                        <th>Precio Unitario</th>
-						<th>Cantidad Producto Total</th>
-						<th>Compra</th>
-						<th>Presentacion de ron </th>
-                       
-                        <th> opciones</th>
-                        <th> </th>
-						
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Código</th>
+                    <th>Evento</th>
+                    <th>Cantidad</th>
+                   
+
 					</tr>
 				</thead>
 				<tbody>
@@ -55,15 +55,15 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($compra as $compra){ ?>
 						<tr>
-							<td><?php echo $compra->id_detalle_compra ?></td>
-                            <td><?php echo $compra->precio_unitario_detalle_compra ?></td>
-							<td><?php echo $compra->cant_prod_total_detalle_compra?></td>
-							<td><?php echo $compra->fk_id_compra?></td>
-                            <td><?php echo $compra->fk_id_presentacion_ron?></td>
+							<td><?php echo $compra->id_entrada  ?></td>
+                            <td><?php echo $compra->nombre_entrada ?></td>
+							<td><?php echo $compra->descripcion_entrada?></td>
+							<td><?php echo $compra->precio_entrada?></td>
+                            <td><?php echo $compra->codigo_entrada ?></td>
+                            <td><?php echo $compra->fk_id_evento?></td>
+                            <td><?php echo $compra->cantidad_entrada?></td>
                             
-                            
-							<td><a class="btn btn-info" href="<?php echo "editar.php?id_detalle_compra=" . $compra->id_detalle_compra?>">Editar 📝</a></td>
-							<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id_detalle_compra=" . $compra->id_detalle_compra?>">Eliminar 🗑️</a></td>
+							
 						</tr>
 					<?php } ?>
 				</tbody>

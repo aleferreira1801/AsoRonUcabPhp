@@ -30,7 +30,7 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Listar Evento</h1>
+		<h1>Lista Venta</h1>
 		<a href="//parzibyte.me/blog" target="_blank">By Parzibyte</a>
 		<br>
 		<div class="table-responsive">

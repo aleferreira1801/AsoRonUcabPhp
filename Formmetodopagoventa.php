@@ -22,43 +22,43 @@ los datos
 </head>
 <body>
 <div class="container">
-    <h1 class=" text-center">Empleado</h1>
+    <h1 class=" text-center">Metodo Pago Venta</h1>
 		<form action="InsertarMetodoPagoVenta.php" method="POST">
             
         <div class="form-group">
 				<label>Monto</label>
-				<input required name="monto_Venta" type="text" id="monto_venta" placeholder="Ingrese el monto" class="form-control">
+				<input required name="monto_Venta" type="number"   id="monto_venta" placeholder="Ingrese el monto" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Venta</label>
-				<input required name="titulo_puesto_empleado" type="text" id="titulo_puesto_empleado" placeholder="Ingrese El Puesto" class="form-control">
+				<input required name="fk_id_venta" type="integer" id="fk_id_venta" placeholder="Ingrese El Puesto" class="form-control">
 			</div>
          
 			<div class="form-group">
-				<label >Jefe</label>
-				<input  name="fk_id_empleado" type="integer" id="fk_id_empleado" placeholder="Ingrese el jefe" class="form-control">
+				<label >Efectivo</label>
+				<input  name="fk_id_metodo_pago_efectivo" type="integer" id="fk_id_metodo_pago_efectivo" placeholder="Ingrese el efectivo" class="form-control">
 			</div>
             <div class="form-group">
-				<label >Persona Natural</label>
-				<input required name="fk_id_persona_natural" type="integer" id="fk_id_persona_natural" placeholder="Ingresa la persona natural" class="form-control">
+				<label >Tarjeta De Debito</label>
+				<input  name="fk_id_metodo_pago_tarjeta_debito" type="integer" id="fk_id_metodo_pago_tarjeta_debito" placeholder="Ingresa la persona natural" class="form-control">
 			</div>
 			
             <div class="form-group">
-				<label >Punto De Venta</label>
-				<input required name="fk_id_punto_de_venta" type="integer" id="fk_id_punto_de_venta" placeholder="Ingresa el punto de venta" class="form-control">
+				<label >Afiliado</label>
+				<input  name="fk_id_metodo_pago_punto_afiliado" type="integer" id="fk_id_metodo_pago_punto_afiliado" placeholder="Ingresa el punto de venta" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label>Fecha Hora Inicio Turno</label>
-				<input required name="inicio_turno" type="datetime-local"  id="inicio_turno"  placeholder="Ingrese la fecha de inicio" class="form-control">
+				<label>Cheque</label>
+				<input  name="fk_id_metodo_pago_cheque  " type="integer"  id="fk_id_metodo_pago_cheque"  placeholder="Ingrese la fecha de inicio" class="form-control">
 			</div>
             <div class="form-group">
-				<label >Fecha Hora Fin Turno</label>
-				<input required name="fin_turno" type="datetime-local" id="fin_turno" placeholder="Ingrese la fecha de fin" class="form-control">
+				<label >Tarjeta De Credito</label>
+				<input  name="fk_id_metodo_pago_tarjeta_credio" type="integer" id="ffk_id_metodo_pago_tarjeta_credito" placeholder="Ingrese la fecha de fin" class="form-control">
 			</div> 
 			
 			<button type="submit" class="btn btn-danger">Guardar</button>
-			<a href="./ListEmpleado.php" class="btn btn-info">Ver todas</a>
+			<a href="./Listarmetodopagoventa.php" class="btn btn-info">Ver todas</a>
 		</form>
 	</div>
 </div>
