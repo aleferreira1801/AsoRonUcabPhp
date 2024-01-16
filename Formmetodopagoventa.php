@@ -27,7 +27,7 @@ los datos
             
         <div class="form-group">
 				<label>Monto</label>
-				<input required name="monto_Venta" type="number"   id="monto_venta" placeholder="Ingrese el monto" class="form-control">
+				<input required name="monto_venta" type="number"   id="monto_venta" placeholder="Ingrese el monto" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Venta</label>
@@ -50,11 +50,11 @@ los datos
 
 			<div class="form-group">
 				<label>Cheque</label>
-				<input  name="fk_id_metodo_pago_cheque  " type="integer"  id="fk_id_metodo_pago_cheque"  placeholder="Ingrese la fecha de inicio" class="form-control">
+				<input  name="fk_id_metodo_pago_cheque" type="integer"  id="fk_id_metodo_pago_cheque"  placeholder="Ingrese la fecha de inicio" class="form-control">
 			</div>
             <div class="form-group">
 				<label >Tarjeta De Credito</label>
-				<input  name="fk_id_metodo_pago_tarjeta_credio" type="integer" id="ffk_id_metodo_pago_tarjeta_credito" placeholder="Ingrese la fecha de fin" class="form-control">
+				<input  name="fk_id_metodo_pago_tarjeta_credito" type="integer" id="fk_id_metodo_pago_tarjeta_credito" placeholder="Ingrese la fecha de fin" class="form-control">
 			</div> 
 			
 			<button type="submit" class="btn btn-danger">Guardar</button>

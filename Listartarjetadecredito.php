@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM  metodo_pago_punto_afiliado");
+$sentencia = $base_de_datos->query("SELECT * FROM  metodo_pago_tarjeta_credito");
 $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,15 +30,19 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Metodo de pago afiliado</h1>
-		<a href="//parzibyte.me/blog" target="_blank">By Parzibyte</a>
+		<h1>Tarjeta de credito</h1>
+
 		<br>
 		<div class="table-responsive">
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
 						<th>ID</th>
-                        <th>resultado</th>
+                        <th>Numero</th>
+                        <th>Fecha Vence</th>
+                        <th>Codigo Seguridad</th>
+                        <th>Tipo tarjeta</th>
+
 					
 						
 					</tr>
@@ -50,8 +54,12 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($compra as $compra){ ?>
 						<tr>
-							<td><?php echo $compra-> id_metodo_pago_punto_afiliado ?></td>
-                            <td><?php echo $compra->resultado ?></td>
+							<td><?php echo $compra-> id_metodo_pago_tarjeta_credito   ?></td>
+                            <td><?php echo $compra-> numero_tarjeta_credito  ?></td>
+                            <td><?php echo $compra-> fecha_vence_tarjeta_credito   ?></td>
+                            <td><?php echo $compra-> codigo_seguridad_tarjeta_credito  ?></td>
+                            <td><?php echo $compra->  tipo_tarjeta_credito    ?></td>
+                           
 							
                             
 							

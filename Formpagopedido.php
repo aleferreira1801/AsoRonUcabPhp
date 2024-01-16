@@ -23,35 +23,36 @@ los datos
 <body>
 <div class="container">
     <h1 class=" text-center">Pago Usuario</h1>
-		<form action="InsertCompra.php" method="POST">
+		<form action="Insertarpagopedido.php" method="POST">
+        <div class="form-group">
+				<label>Pedido</label>
+				<input  name="fk_id_pedido" type="integer" id="fk_id_pedido" placeholder="Ingrese la fecha de su compra" class="form-control">
+			</div>  
             
         <div class="form-group">
-				<label>numero</label>
-				<input  name="numero_compra" type="integer" id="numero_compra" placeholder="Ingrese la fecha de su compra" class="form-control">
+				<label>Pago Usuario</label>
+				<input  name="fk_id_metodo_paga_usuario" type="integer" id="fk_id_metodo_paga_usuario" placeholder="Ingrese la fecha de su compra" class="form-control">
 			</div>
+
 			<div class="form-group">
-				<label>Fecha</label>
-				<input  name="fecha_compra" type="datetime-local" id="fecha_compra" placeholder="Ingrese la fecha de su compra" class="form-control">
+				<label>Monto</label>
+				<input  name="monto" type="number" step="0.1" id="monto" placeholder="Ingrese la fecha de su compra" class="form-control">
 			</div>
             <div class="form-group">
-				<label>Total</label>
-				<input  name="total_compra" type="number" id="total_compra" step="0.01" placeholder="Ingrese el total de la compra" class="form-control">
+				<label>Tasa</label>
+				<input  name="fk_id_tasa" type="integer" id="fk_id_tasa" placeholder="Ingrese la fecha de su compra" class="form-control">
 			</div>
-            <div class="form-group">
-				<label >Empleado</label>
-				<input  name="fk_id_empleado" type="integer" id="fk_id_empleado" placeholder="Ingrese el empleado" class="form-control">
-			</div> 
-			<div class="form-group">
-				<label >Proveedor</label>
-				<input name="fk_id_proveedor" type="integer" id="fk_id_proveedor" placeholder="Ingrese del proveedor" class="form-control">
-			</div>
+
 			
-		
+	
+
+			
+			
 		
 
 
 			<button type="submit" class="btn btn-danger">Guardar</button>
-			<a href="./ListarCompra.php" class="btn btn-info">Ver todas</a>
+			<a href="./Listapagopedido.php" class="btn btn-info">Ver todas</a>
 		</form>
 	</div>
 </div>

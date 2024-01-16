@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM  tasa_de_cambio");
+$sentencia = $base_de_datos->query("SELECT * FROM   metodo_pago_cheque");
 $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Tabla Tasa De Cambio</h1>
+		<h1>Tabla Metodo Pago Venta</h1>
 	
 		<br>
 		<div class="table-responsive">
@@ -38,11 +38,14 @@ $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
                     <thead class="thead-dark">
                         <tr>
                              <th>#</th>
-                            <th>valor</th>
-                            <th>Fecha Inicio</th>
-                            <th>Fecha Fin</th>
-                            <th>Actualizar</th>
-                            <th></th>
+                            <th>Numero</th>
+                            <th>Banco</th>
+                            <th>Fecha</th>
+                            <th>Autorizacion </th>
+                            <th>Pagase</th>
+                            <th>Suma</th>
+                            <th>Numero de cuenta</th>
+                           
                            
                            
                             
@@ -58,12 +61,15 @@ $personaJuridica = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($personaJuridica as $personaJuridica){ ?>
 						<tr>
-                        <td><?php echo $personaJuridica->id_tasa ?></td>
-							<td><?php echo $personaJuridica->valor_tasa ?></td>
-							<td><?php echo $personaJuridica->fecha_inicio_tasa ?></td>
-							<td><?php echo $personaJuridica->fecha_fin_tasa?></td>
-							<td><a class="btn btn-info" href="<?php echo "editartasacambio.php?id_tasa=" . $personaJuridica->id_tasa?>">Editar 📝</a></td>
-				
+                        <td><?php echo $personaJuridica->id_metodo_pago_cheque ?></td>
+							<td><?php echo $personaJuridica->numero_cheque  ?></td>
+							<td><?php echo $personaJuridica->banco_cheque  ?></td>
+							<td><?php echo $personaJuridica->fecha_pago_cheque?></td>
+                            <td><?php echo $personaJuridica->autoriza_cheque?></td>
+                            <td><?php echo $personaJuridica->pagase_orden?></td>
+                            <td><?php echo $personaJuridica->suma?></td>
+                            <td><?php echo $personaJuridica->nro_cuenta?></td>
+							
 						</tr>
 					<?php } ?>
 				</tbody>

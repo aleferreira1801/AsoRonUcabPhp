@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM  metodo_pago_punto_afiliado");
+$sentencia = $base_de_datos->query("SELECT * FROM  metodo_pago_pedido");
 $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,17 +30,21 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Metodo de pago afiliado</h1>
-		<a href="//parzibyte.me/blog" target="_blank">By Parzibyte</a>
+		<h1>Pago Pedido</h1>
+		
 		<br>
 		<div class="table-responsive">
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
-                        <th>resultado</th>
-					
-						
+                    <th>ID</th>
+                    <th>Pedido</th>
+                    <th>Pago Usuario</th>
+                    <th>monto</th>
+                    <th>tasa</th>
+                
+                   
+
 					</tr>
 				</thead>
 				<tbody>
@@ -50,10 +54,11 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($compra as $compra){ ?>
 						<tr>
-							<td><?php echo $compra-> id_metodo_pago_punto_afiliado ?></td>
-                            <td><?php echo $compra->resultado ?></td>
-							
-                            
+							<td><?php echo $compra->id_metodo_pago_pedido   ?></td>
+                            <td><?php echo $compra->fk_id_pedido  ?></td>
+							<td><?php echo $compra->fk_id_metodo_paga_usuario ?></td>
+							<td><?php echo $compra->monto?></td>
+                            <td><?php echo $compra->fk_id_tasa?></td>
 							
 						</tr>
 					<?php } ?>
@@ -66,4 +71,3 @@ $compra = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 <?php  ?>
-          
