@@ -13,7 +13,7 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT  * FROM  presentacion_ron");
+$sentencia = $base_de_datos->query("select * from vista_presentacion_ron;");
 $presentacionron = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ $presentacionron = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Presentacion Ron</h1>
+		<h1> Reporte 7 Presentacion Ron</h1>
 		
 		<br>
 		<div class="table-responsive">

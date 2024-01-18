@@ -13,7 +13,11 @@ los mismos como un arreglo
 ?>
 <?php
 include_once "connection.php";
-$sentencia = $base_de_datos->query("SELECT * FROM presentacion_ron_oferta");
+$sentencia = $base_de_datos->query("select extract(MONTH from c.fecha_compra) as mes,extract(YEAR from c.fecha_compra) as anio,sum(dc.cant_prod_total_detalle_compra) as total_prod_comp
+from compra c
+join detalle_compra dc on c.id_compra = dc.fk_id_compra
+group by mes,anio
+order by mes, anio;");
 $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
@@ -30,15 +34,16 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <div class="row">
 <!-- Aquí pon las col-x necesarias, comienza tu contenido, etcétera -->
 	<div class="col-12">
-		<h1>Listar Presentacion Ron Oferta</h1>
+		<h1>  Reporte 8 Compra </h1>
 		<br>
 		<div class="table-responsive">
 			<table class="table table-bordered">
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
-						<th>Oferta</th>
-						<th>Presentacion_Ron</th>
+						<th>Mes</th>
+						<th>Año</th>
+						<th>Total Producto Vendido</th>
+                       
 						
 					</tr>
 				</thead>
@@ -49,9 +54,10 @@ $mascotas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 					-->
 					<?php foreach($mascotas as $mascota){ ?>
 						<tr>
-							<td><?php echo $mascota-> id_presentacion_ron_oferta ?></td>
-							<td><?php echo $mascota->fk_id_oferta?></td>
-							<td><?php echo $mascota->fk_id_presentacion_ron ?></td>
+							<td><?php echo $mascota-> mes?></td>
+							<td><?php echo $mascota->anio?></td>
+							<td><?php echo $mascota->total_prod_comp ?></td>
+                     
                             
 							
 						</tr>
