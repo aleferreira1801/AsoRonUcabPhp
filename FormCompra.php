@@ -17,21 +17,21 @@ los datos
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AsoronUcab </title>
+    <title>AsoronUcab-Compra  </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-    <h1 class=" text-center">Pago Usuario</h1>
+    <h1 class=" text-center">Compra</h1>
 		<form action="InsertCompra.php" method="POST">
             
         <div class="form-group">
-				<label>numero</label>
-				<input  name="numero_compra" type="integer" id="numero_compra" placeholder="Ingrese la fecha de su compra" class="form-control">
+				<label>Numero</label>
+				<input  name="numero_compra" type="integer" id="numero_compra" placeholder="Ingrese el numero de compra" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Fecha</label>
-				<input  name="fecha_compra" type="datetime-local" id="fecha_compra" placeholder="Ingrese la fecha de su compra" class="form-control">
+				<input  name="fecha_compra" type="datetime-local" id="fecha_compra" placeholder="Ingrese la fecha de compra" class="form-control">
 			</div>
             <div class="form-group">
 				<label>Total</label>
@@ -45,6 +45,13 @@ los datos
 				<label >Proveedor</label>
 				<input name="fk_id_proveedor" type="integer" id="fk_id_proveedor" placeholder="Ingrese del proveedor" class="form-control">
 			</div>
+
+			
+            
+            
+			
+               
+               
 			
 		
 		

@@ -22,7 +22,7 @@ los datos
 </head>
 <body>
 <div class="container">
-    <h1 class=" text-center">Pago Usuario</h1>
+    <h1 class=" text-center">Pago Pedido</h1>
 		<form action="Insertarpagopedido.php" method="POST">
         <div class="form-group">
 				<label>Pedido</label>
